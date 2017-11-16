@@ -53,8 +53,13 @@ function updateProduct(id, quantity, callback) {
   });
 }
 
+function endConnection() {
+  connection.end();
+}
+
 module.exports = {
   getAll          : getAllProducts,
   totalRows       : totalItems,
   updateProduct   : updateProduct,
+  endConnection   : endConnection
 }
