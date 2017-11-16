@@ -8,8 +8,9 @@ const connection = mysql.createConnection({
 
   // Your password
   password: "root",
-  database: "products"
+  database: "bamazon"
 });
+const DB_TABLE = 'products';
 
 
 connection.connect(function(err) {
@@ -17,13 +18,19 @@ connection.connect(function(err) {
   //console.log("connected as id " + connection.threadId + "\n");
 });
 
-function printAllProducts() {
-  var query = "SELECT * FROM `" + connection.database + "`";
+function getAllProducts(callback) {
+  var query = "SELECT * FROM `" + DB_TABLE + "`";
 
   doQuery(query, function(result) {
-    console.log('yo', result);
+    callback(result);
   });
+}
 
+function totalItems() {
+  var query = "SELECT COUNT (*) as `total_items` FROM " + DB_TABLE
+  doQuery(query, function(result) {
+    console.log(result);
+  })
 }
 
 function doQuery(query, callback) {
@@ -32,10 +39,22 @@ function doQuery(query, callback) {
 
     callback(res);
 
-    connection.end();
+    //connection.end();
+  });
+}
+
+function updateProduct(id, quantity, callback) {
+  var query = "UPDATE " + DB_TABLE + 
+             " SET `stock_quantity` = " + quantity + 
+             " WHERE `item_id` = " + id;
+
+  doQuery(query, function(result) {
+    callback(result);
   });
 }
 
 module.exports = {
-  printAll: printAllProducts
+  getAll          : getAllProducts,
+  totalRows       : totalItems,
+  updateProduct   : updateProduct,
 }
