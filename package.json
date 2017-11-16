@@ -1,0 +1,22 @@
+{
+  "name": "bamazon",
+  "version": "1.0.0",
+  "description": "Playing w. Node mysql",
+  "main": "bamazonCustomer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yankwong/bamazon.git"
+  },
+  "author": "Yan Kwong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yankwong/bamazon/issues"
+  },
+  "homepage": "https://github.com/yankwong/bamazon#readme",
+  "dependencies": {
+    "inquirer": "^4.0.0"
+  }
+}
