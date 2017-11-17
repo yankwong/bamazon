@@ -22,13 +22,11 @@ To start the app, run this command on terminal
 node bamazonCustomer.js
 ```
 
-[screenshot one]
-(https://yankwong.github.io/bamazon/images/shot-1.png)
+![screenshot one](https://yankwong.github.io/bamazon/images/shot-1.png)
 
 As show above, every items from the database is shown. Pick an ID.
 
-[screenshot two]
-(https://yankwong.github.io/bamazon/images/shot-2.png)
+![screenshot two](https://yankwong.github.io/bamazon/images/shot-2.png)
 
 Tell the app how many of the items you want to buy.
 
