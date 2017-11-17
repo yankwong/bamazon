@@ -22,7 +22,8 @@ To start the app, run this command on terminal
 node bamazonCustomer.js
 ```
 
-(/images/shot-1.png)
+![screenshot one]
+(/../../images/shot-1.png)
 
 ```
 until finished
