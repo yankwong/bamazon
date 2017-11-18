@@ -57,9 +57,30 @@ function endConnection() {
   connection.end();
 }
 
+function getLowInventory(callback) {
+  var query = "SELECT * FROM `" + DB_TABLE + "` " +
+              "WHERE `stock_quantity` < 5";
+
+  doQuery(query, function(result) {
+    callback(result);
+  });
+}
+
+function addItem(itemObj, callback) {
+  var query = "INSERT INTO `" + DB_TABLE + "` " +
+              "(`product_name`, `department_name`, `price`, `stock_quantity`) VALUES" +
+              "('" + itemObj.name + "', '" + itemObj.dept + "', '" + itemObj.price + "', '" + itemObj.total + "')";
+
+  doQuery(query, function(result) {
+    callback(result);
+  });      
+}
+
 module.exports = {
   getAll          : getAllProducts,
   totalRows       : totalItems,
   updateProduct   : updateProduct,
-  endConnection   : endConnection
+  endConnection   : endConnection,
+  getLowInventory : getLowInventory,
+  addItem         : addItem,
 }
