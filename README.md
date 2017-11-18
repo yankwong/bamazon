@@ -1,6 +1,6 @@
-# Project Title
+# Bamazon app
 
-A simple function to query an amazon-like database
+A simple app to query a mysql database
 
 ## Getting Started
 
